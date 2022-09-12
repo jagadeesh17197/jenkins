@@ -1,0 +1,63 @@
+Continuous Integration and Continuous Delivery 
+(CICD)
+Introduction
+Jenkins is an open source automation tool written in Java with plugins built for Continuous Integration purpose. 
+Jenkins is used to build and test your software projects continuously making it easier for developers to integrate 
+changes to the project, and making it easier for users to obtain a fresh build. It also allows you to continuously 
+deliver your software by integrating with a large number of testing and deployment technologies.
+With Jenkins, organizations can accelerate the software development process through automation. Jenkins 
+integrates development life-cycle processes of all kinds, including build, document, test, package, stage, deploy, 
+static analysis and much more.
+Jenkins achieves Continuous Integration with the help of plugins. Plugins allows the integration of Various 
+DevOps stages. If you want to integrate a particular tool, you need to install the plugins for that tool. For example: 
+Git, Maven 2 project, Amazon EC2, HTML publisher etc.
+
+TOPICS
+1. Installing and Configuring Jenkins 
+2. How to Find Home Directory
+3. How to create Users, Manage Users, Roles
+4. Getting Started with JOBS
+5. Running Job remotely
+6. Scheduling Build Jobs
+7. Jenkins Integrations with GIT
+8. CICD using GIT, Maven and Tomcat server
+9. Sending Email Notification using Jenkins
+1. Installing and Configuring Jenkins
+Step 1:
+Download JDK, Tomcat & Jenkins.war
+Login into instance ---> change to root user ---> update your instance ---> 
+change to OPT dir ---> download JDK, Tomcat7 & Jenkins.war
+$sudo su root
+#cd /
+#apt-get update
+#cd /opt/
+#wget https://jdk1.8………..tar.gz
+#wget https://apache-tomcat…….tar.gz
+Open your firefox browser → https://jenkins.io/download/
+ 
+#wget http://ftp-chi.osuosl.org/pub/jenkins/war-stable/2.150.2/jenkins.war
+Step 2: Setting paths for Java / JDK and tomcat
+Unzip JDK and apache-tomcat
+#tar -xzf jdk1.8…………...tar.gs ------> for unzip jdk
+#tar -xzf apache-tomcat7…...tar.gz ------> for unzip tomcat
+#mv jdk1.8…… jdk1.8 ---> for changing name to jdk1.8
+#mv apache-tomcat----- tomcat7 ----> for changing name to tomcat7
+#vi ~/.profile
+# source ~/.profile ---> to update environment variables
+# java -version ----> to check java version, for confirmation of installation
+Move jenkins.war file from /opt/ to /opt/tomcat7/webapp/
+#mv jenkins.war tomcat7/webapps/
+#startup.sh -----> to start tomcat server
+Copy instance public ip, open browser
+ <instance public ip>:8080/jenkins (tomcat runs on 8080 port default)
+
+
+
+
+
+
+
+2. How to Find Home Directory of Jenkins
+1. By Default, while Jenkins installation, a dir will be created in login user home dir
+2. This jenkins home dir contains -- All Configurations, Plugins, logs, jobs & etc
+3. Login to Jenkins ---> Manage Jenkins ---> on top, you can see the home dir
